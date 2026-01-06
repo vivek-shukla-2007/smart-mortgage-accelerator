@@ -1,48 +1,126 @@
-import { ScrollView, Text, View, TouchableOpacity } from "react-native";
-
+import { ScrollView, Text, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { MetricCard, Button, SectionHeader, Card } from "@/components/mortgage-components";
+import { useMortgage } from "@/lib/mortgage-context";
+import { monthsToYearsMonths, formatCurrency } from "@/lib/mortgage-calculator";
 
 /**
- * Home Screen - NativeWind Example
- *
- * This template uses NativeWind (Tailwind CSS for React Native).
- * You can use familiar Tailwind classes directly in className props.
- *
- * Key patterns:
- * - Use `className` instead of `style` for most styling
- * - Theme colors: use tokens directly (bg-background, text-foreground, bg-primary, etc.); no dark: prefix needed
- * - Responsive: standard Tailwind breakpoints work on web
- * - Custom colors defined in tailwind.config.js
+ * Home Screen - Dashboard
+ * 
+ * Shows a summary of the current mortgage scenario and quick action buttons
+ * to navigate to different calculators.
  */
 export default function HomeScreen() {
+  const { state, getCurrentScenario } = useMortgage();
+  const currentScenario = getCurrentScenario();
+
+  const { years, months } = currentScenario
+    ? monthsToYearsMonths(currentScenario.tenureMonths)
+    : { years: 0, months: 0 };
+
   return (
-    <ScreenContainer className="p-6">
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View className="flex-1 gap-8">
-          {/* Hero Section */}
-          <View className="items-center gap-2">
-            <Text className="text-4xl font-bold text-foreground">Welcome</Text>
+    <ScreenContainer className="p-4">
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
+        {/* Header */}
+        <View className="mb-6">
+          <Text className="text-3xl font-bold text-foreground">
+            Smart Mortgage
+          </Text>
+          <Text className="text-base text-muted mt-1">
+            Optimize your mortgage strategy
+          </Text>
+        </View>
+
+        {/* Current Scenario Summary */}
+        {currentScenario ? (
+          <>
+            <SectionHeader title="Current Scenario" subtitle={currentScenario.name} />
+
+            <MetricCard
+              label="Monthly EMI"
+              value={formatCurrency(currentScenario.monthlyEMI)}
+              unit={state.currency}
+              highlight
+            />
+
+            <View className="grid gap-3 mb-4">
+              <MetricCard
+                label="Remaining Tenure"
+                value={`${years}y ${months}m`}
+              />
+              <MetricCard
+                label="Total Interest"
+                value={formatCurrency(currentScenario.totalInterest)}
+                unit={state.currency}
+              />
+              <MetricCard
+                label="Total Loan Amount"
+                value={formatCurrency(currentScenario.loanAmount)}
+                unit={state.currency}
+              />
+            </View>
+          </>
+        ) : (
+          <Card className="mb-6">
             <Text className="text-base text-muted text-center">
-              Edit app/(tabs)/index.tsx to get started
+              No mortgage scenario created yet. Start by creating a new scenario!
             </Text>
-          </View>
+          </Card>
+        )}
 
-          {/* Example Card */}
-          <View className="w-full max-w-sm self-center bg-surface rounded-2xl p-6 shadow-sm border border-border">
-            <Text className="text-lg font-semibold text-foreground mb-2">NativeWind Ready</Text>
-            <Text className="text-sm text-muted leading-relaxed">
-              Use Tailwind CSS classes directly in your React Native components.
-            </Text>
-          </View>
+        {/* Quick Actions */}
+        <SectionHeader title="Quick Actions" />
 
-          {/* Example Button */}
-          <View className="items-center">
-            <TouchableOpacity className="bg-primary px-6 py-3 rounded-full active:opacity-80">
-              <Text className="text-background font-semibold">Get Started</Text>
-            </TouchableOpacity>
-          </View>
+        <View className="gap-3 mb-6">
+          <Button
+            title="Basic Calculator"
+            onPress={() => alert("Basic Calculator - Coming Soon")}
+            variant="primary"
+            size="large"
+          />
+          <Button
+            title="Overpayment Impact"
+            onPress={() => alert("Overpayment Impact - Coming Soon")}
+            variant="secondary"
+            size="large"
+          />
+          <Button
+            title="Fixed-Rate Term Manager"
+            onPress={() => alert("Fixed-Rate Term Manager - Coming Soon")}
+            variant="secondary"
+            size="large"
+          />
+          <Button
+            title="Part Payment Calculator"
+            onPress={() => alert("Part Payment Calculator - Coming Soon")}
+            variant="secondary"
+            size="large"
+          />
+          <Button
+            title="Amortization Schedule"
+            onPress={() => alert("Amortization Schedule - Coming Soon")}
+            variant="secondary"
+            size="large"
+          />
+          <Button
+            title="Compare Scenarios"
+            onPress={() => alert("Compare Scenarios - Coming Soon")}
+            variant="secondary"
+            size="large"
+          />
+        </View>
+
+        {/* Settings */}
+        <View className="gap-2">
+          <Button
+            title="Settings"
+            onPress={() => alert("Settings - Coming Soon")}
+            variant="outline"
+            size="medium"
+          />
         </View>
       </ScrollView>
     </ScreenContainer>
   );
 }
+
