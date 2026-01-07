@@ -11,13 +11,13 @@
 
 ## Phase 2: UI Components & Screens
 - [x] Design and build Home/Dashboard screen
-- [ ] Design and build Basic Calculator screen
-- [ ] Design and build Overpayment Impact screen with real-time slider
+- [x] Design and build Basic Calculator screen
+- [x] Design and build Overpayment Impact screen with real-time slider
 - [ ] Design and build Fixed-Rate Term Manager screen
-- [ ] Design and build Part Payment Calculator screen
-- [ ] Design and build Amortization Schedule screen with export option
-- [ ] Design and build Comparison screen
-- [ ] Design and build Settings screen
+- [x] Design and build Part Payment Calculator screen
+- [x] Design and build Amortization Schedule screen with export option
+- [x] Design and build Comparison screen
+- [x] Design and build Settings screen
 - [x] Create reusable input components (text fields, sliders, pickers)
 - [x] Create reusable result display components (cards, metrics)
 

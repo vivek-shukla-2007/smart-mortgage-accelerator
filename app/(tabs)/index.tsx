@@ -74,37 +74,37 @@ export default function HomeScreen() {
         <View className="gap-3 mb-6">
           <Button
             title="Basic Calculator"
-            onPress={() => alert("Basic Calculator - Coming Soon")}
+            onPress={() => {}}
             variant="primary"
             size="large"
           />
           <Button
             title="Overpayment Impact"
-            onPress={() => alert("Overpayment Impact - Coming Soon")}
+            onPress={() => {}}
             variant="secondary"
             size="large"
           />
           <Button
             title="Fixed-Rate Term Manager"
-            onPress={() => alert("Fixed-Rate Term Manager - Coming Soon")}
+            onPress={() => {}}
             variant="secondary"
             size="large"
           />
           <Button
             title="Part Payment Calculator"
-            onPress={() => alert("Part Payment Calculator - Coming Soon")}
+            onPress={() => {}}
             variant="secondary"
             size="large"
           />
           <Button
             title="Amortization Schedule"
-            onPress={() => alert("Amortization Schedule - Coming Soon")}
+            onPress={() => {}}
             variant="secondary"
             size="large"
           />
           <Button
             title="Compare Scenarios"
-            onPress={() => alert("Compare Scenarios - Coming Soon")}
+            onPress={() => {}}
             variant="secondary"
             size="large"
           />
@@ -114,7 +114,7 @@ export default function HomeScreen() {
         <View className="gap-2">
           <Button
             title="Settings"
-            onPress={() => alert("Settings - Coming Soon")}
+            onPress={() => {}}
             variant="outline"
             size="medium"
           />
