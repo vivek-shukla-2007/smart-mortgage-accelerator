@@ -88,3 +88,13 @@
 - [ ] Property tax and insurance estimator
 - [ ] Mortgage prepayment penalty calculator
 
+
+## Phase 2.5: Advanced Calculator (NEW)
+- [x] Create Advanced Calculator screen with date-based inputs
+- [x] Add fixed-rate term end date picker
+- [x] Add lump-sum payment date picker
+- [x] Add EMI payment date selector (monthly)
+- [x] Add extra payment period (start/end date range)
+- [x] Implement complex calculation logic for date-based scenarios
+- [x] Add visualization for payment timeline
+- [x] Test with multiple scenarios
