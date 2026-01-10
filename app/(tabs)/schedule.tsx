@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { ScrollView, View, Text, FlatList } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { CalculatorBannerAd } from "@/components/admob-banner";
 import {
   InputField,
   Button,
@@ -117,7 +118,7 @@ export default function ScheduleScreen() {
 
   return (
     <ScreenContainer className="p-4">
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 80 }}>
         {/* Header */}
         <SectionHeader
           title="Amortization Schedule"
@@ -244,6 +245,7 @@ export default function ScheduleScreen() {
           </View>
         )}
       </ScrollView>
+      <CalculatorBannerAd />
     </ScreenContainer>
   );
 }

@@ -39,16 +39,22 @@
 - [x] Implement currency and preference storage
 
 ## Phase 5: AdMob Integration
-- [ ] Set up AdMob account and get ad unit IDs
-- [ ] Integrate AdMob banner ads (bottom of screens)
-- [ ] Integrate AdMob interstitial ads (after calculations)
+- [x] Set up AdMob account and get ad unit IDs
+- [x] Integrate AdMob banner ads (bottom of screens)
+- [x] Integrate AdMob interstitial ads (after calculations)
 - [ ] Integrate AdMob rewarded ads (optional premium features)
 - [ ] Test ads on iOS and Android
 - [ ] Implement ad-free premium tier (optional)
 
-## Phase 6: UI Polish & Branding
-- [ ] Generate custom app logo and icon
-- [ ] Update app.config.ts with branding (app name, logo URL)
+## Phase 6: Navigation & Routing
+- [x] Connect calculator buttons to their respective screens
+- [x] Set up tab bar navigation with all screens
+- [x] Add back button navigation
+- [x] Test all navigation flows
+
+## Phase 7: UI Polish & Branding
+- [x] Generate custom app logo and icon
+- [x] Update app.config.ts with branding (app name, logo URL)
 - [ ] Refine color scheme and theme
 - [ ] Add animations and transitions (subtle, not distracting)
 - [ ] Implement dark mode support

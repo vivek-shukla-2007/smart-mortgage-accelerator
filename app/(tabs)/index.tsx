@@ -1,4 +1,6 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
+
 import { ScreenContainer } from "@/components/screen-container";
 import { MetricCard, Button, SectionHeader, Card } from "@/components/mortgage-components";
 import { useMortgage } from "@/lib/mortgage-context";
@@ -11,6 +13,7 @@ import { monthsToYearsMonths, formatCurrency } from "@/lib/mortgage-calculator";
  * to navigate to different calculators.
  */
 export default function HomeScreen() {
+  const router = useRouter();
   const { state, getCurrentScenario } = useMortgage();
   const currentScenario = getCurrentScenario();
 
@@ -74,37 +77,37 @@ export default function HomeScreen() {
         <View className="gap-3 mb-6">
           <Button
             title="Basic Calculator"
-            onPress={() => {}}
+            onPress={() => router.push("/calculator")}
             variant="primary"
             size="large"
           />
           <Button
             title="Overpayment Impact"
-            onPress={() => {}}
+            onPress={() => router.push("/overpayment")}
             variant="secondary"
             size="large"
           />
           <Button
-            title="Fixed-Rate Term Manager"
-            onPress={() => {}}
+            title="Advanced Calculator"
+            onPress={() => router.push("/advanced")}
             variant="secondary"
             size="large"
           />
           <Button
             title="Part Payment Calculator"
-            onPress={() => {}}
+            onPress={() => router.push("/part-payment")}
             variant="secondary"
             size="large"
           />
           <Button
             title="Amortization Schedule"
-            onPress={() => {}}
+            onPress={() => router.push("/schedule")}
             variant="secondary"
             size="large"
           />
           <Button
             title="Compare Scenarios"
-            onPress={() => {}}
+            onPress={() => router.push("/compare")}
             variant="secondary"
             size="large"
           />
@@ -114,7 +117,7 @@ export default function HomeScreen() {
         <View className="gap-2">
           <Button
             title="Settings"
-            onPress={() => {}}
+            onPress={() => router.push("/settings")}
             variant="outline"
             size="medium"
           />

@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { ScrollView, View, Text, FlatList } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { ComparisonBannerAd } from "@/components/admob-banner";
 import {
   Button,
   SectionHeader,
@@ -135,7 +136,7 @@ export default function CompareScreen() {
 
   return (
     <ScreenContainer className="p-4">
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 80 }}>
         {/* Header */}
         <SectionHeader
           title="Compare Scenarios"
@@ -226,6 +227,7 @@ export default function CompareScreen() {
           </View>
         )}
       </ScrollView>
+      <ComparisonBannerAd />
     </ScreenContainer>
   );
 }

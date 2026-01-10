@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { ScrollView, View, Alert } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { CalculatorBannerAd } from "@/components/admob-banner";
 import {
   InputField,
   Button,
@@ -162,7 +163,7 @@ export default function PartPaymentScreen() {
 
   return (
     <ScreenContainer className="p-4">
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 80 }}>
         {/* Header */}
         <SectionHeader
           title="Part Payment Calculator"
@@ -332,6 +333,7 @@ export default function PartPaymentScreen() {
           </View>
         )}
       </ScrollView>
+      <CalculatorBannerAd />
     </ScreenContainer>
   );
 }
